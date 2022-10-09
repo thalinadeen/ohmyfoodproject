@@ -1,0 +1,423 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* header logo */
+
+#logo {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr;
+    padding: 15px 20px;
+    width: 100%;
+}
+
+.fa-arrow-left-long {
+    color: black;
+    font-size: 30px;
+}
+
+.logo {
+    width: clamp(100px, 30vw, 200px);
+}
+
+
+/* div entête */
+.entête {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.entêtenote {
+    width: 100%;
+    height: 425px;
+    object-fit: cover;
+    object-position: 30% 80%;
+    position: relative;
+}
+
+/* section1 */
+#section1 {
+    border-radius: 30px 30px 0 0;
+    background-color: rgb(243, 242, 242);
+    width: 100%;
+    position: absolute;
+    top: 65%;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    padding: 40px 20px 20px 20px;
+}
+
+#soutitre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+#soutitre h2 {
+    font-family: 'Shrikhand', cursive;
+    font-size: clamp(1.8em, 4vw, 4em);
+}
+
+#soutitre i {
+    cursor: pointer;
+    font-size: clamp(1.5em, 4vw, 3em);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#soutitre .fa-solid {
+    background: linear-gradient(90deg, #ff79da, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;
+    transition: all 1s linear;
+}
+
+#soutitre .fa-solid:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* les entrées */
+
+.entrées,
+.plat,
+.dessert {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.entrées:hover,
+.plat:hover,
+.dessert:hover {
+    background: radial-gradient(ellipse at center, rgba(255, 121, 218, .6), rgba(147, 86, 220, .6));
+    border-radius: 10px;
+}
+
+.entrées h3,
+.plat h3,
+.dessert h3 {
+    width: 100%;
+    font-weight: normal;
+    text-align: left;
+}
+
+#border {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+}
+
+#border span {
+    width: 45px;
+    border: 3px solid #8aecec;
+}
+
+.entrée1,
+.entrée2,
+.entrée3,
+.entrée4,
+.plat1,
+.plat2,
+.plat3,
+.dessert1,
+.dessert2,
+.dessert3 {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: left;
+    padding: 10px 30px 10px 15px;
+    position: relative;
+    box-shadow: 2px 3px 3px 3px rgba(51, 51, 51, 0.2);
+    transition: all 1s linear;
+    animation-name: fade;
+    animation-fill-mode: both;
+}
+
+.entrée1 {
+    animation-delay: 1.5s;
+}
+
+.entrée2 {
+    animation-delay: 2s;
+    animation-duration: 1s;
+}
+
+.entrée3 {
+    animation-delay: 2.5s;
+    animation-duration: 1s;
+}
+
+.entrée4 {
+    animation-delay: 3s;
+    animation-duration: 1s;
+}
+
+.plat1 {
+    animation-delay: 3.5s;
+    animation-duration: 1s;
+}
+
+.plat2 {
+    animation-delay: 4s;
+    animation-duration: 1s;
+}
+
+.plat3 {
+    animation-delay: 4.5s;
+    animation-duration: 1s;
+}
+
+.dessert1 {
+    animation-delay: 5s;
+    animation-duration: 1s;
+}
+
+.dessert2 {
+    animation-delay: 5.5s;
+    animation-duration: 1s;
+}
+
+.dessert3 {
+    animation-delay: 6s;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+.entrée1:active,
+.entrée2:active,
+.entrée3:active,
+.entrée4:active,
+.plat1:active,
+.plat2:active,
+.plat3:active,
+.dessert1:active,
+.dessert2:active,
+.dessert3:active{
+    transform: scale(1.1);
+}
+
+#entrée1,
+#entrée2,
+#entrée3,
+#entrée4,
+#plat1,
+#plat2,
+#plat3,
+#dessert1,
+#dessert2,
+#dessert3 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "h4 prix""p1 prix";
+    font-size: 20px;
+    width: 100%;
+    transition: all 2s ease-in-out;
+}
+
+.check {
+    background-color: rgb(80, 202, 161);
+    opacity: .5;
+    color: #fff;
+    position: absolute;
+    width: 0;
+    height: 75px;
+    border-radius: 0 20px 20px 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    transition: all 2s ease-in-out;
+    visibility: hidden;
+}
+
+.fa-circle-check {
+    margin-top: 25px;
+    transition: all 2s;
+    visibility: hidden;
+}
+
+.entrée1:hover #entrée1,
+.entrée2:hover #entrée2,
+.entrée3:hover #entrée3,
+.entrée4:hover #entrée4,
+.plat1:hover #plat1,
+.plat2:hover #plat2,
+.plat3:hover #plat3,
+.dessert1:hover #dessert1,
+.dessert2:hover #dessert2,
+.dessert3:hover #dessert3 {
+    width: 80%;
+}
+
+.entrée1:hover .check,
+.entrée2:hover .check,
+.entrée3:hover .check,
+.entrée4:hover .check,
+.plat1:hover .check,
+.plat2:hover .check,
+.plat3:hover .check,
+.dessert1:hover .check,
+.dessert2:hover .check,
+.dessert3:hover .check {
+    visibility: visible;
+    width: 20%;
+}
+
+.entrée1:hover .check .fa-circle-check,
+.entrée2:hover .check .fa-circle-check,
+.entrée3:hover .check .fa-circle-check,
+.entrée4:hover .check .fa-circle-check,
+.plat1:hover .check .fa-circle-check,
+.plat2:hover .check .fa-circle-check,
+.plat3:hover .check .fa-circle-check,
+.dessert1:hover .check .fa-circle-check,
+.dessert2:hover .check .fa-circle-check,
+.dessert3:hover .check .fa-circle-check {
+    visibility: visible;
+    transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+}
+
+.prix {
+    font-weight: bold;
+    grid-area: prix;
+    margin-top: 100%;
+}
+
+.p1 {
+    grid-area: p1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    grid-area: h4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* bouton commander */
+
+#button{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#button button{
+    text-decoration: none;
+    border: none;
+    font-size: 15px;
+    font-family: 'Roboto';
+    color: #fff;
+    background-image: linear-gradient(90deg, #ff79da, #9356dc);
+    padding: 15px 25px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px 2px #e2e2e2;
+    transition: all 1s linear;
+}
+
+#button button:hover{
+    transform: scale(1.2);
+
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    width: 100%;
+    background-color: #333;
+    row-gap: 10px;
+    color: #fff;
+    padding: 20px 0 20px 50px;
+}
+
+h1 {
+    font-family: 'Shrikhand', cursive;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+footer i {
+    margin-right: 5px;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (min-width:801px) {
+
+    /* les cases des restaurants */
+    .section1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+
+    .entrées,
+    .plat,
+    .dessert {
+        width: 48%;
+    }
+}

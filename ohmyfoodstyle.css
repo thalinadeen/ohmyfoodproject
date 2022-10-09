@@ -1,0 +1,431 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* loader */
+.load{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, #FF79DA, #9356DC);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation: load 3s;
+    animation-fill-mode: both;
+}
+
+@keyframes load {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        visibility: collapse;
+    }
+}
+
+.loader{
+    border-top: 15px dotted;
+    border-bottom: 15px dotted;
+    text-align: center;
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.loading{
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 10px;
+}
+
+@keyframes spin {
+    to{
+        color:hotpink;
+    }
+    0% {
+        color: #fff;
+        padding: 30px;
+    }
+    50% {
+        color: gray;
+    }
+    100% {
+        transform: scale(1.5);
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 10px dotted;
+        border-left: 10px dotted;
+        padding: 0 10px;
+    }
+}
+
+/* Header logo */
+header img {
+    width: clamp(2rem, 50vw, 20rem);
+    height: 10%;
+    object-fit: cover;
+}
+
+/* css sous-titre */
+.sous-titre {
+    font-size: clamp(1em, 2vw, 2em);
+    font-weight: bold;
+    height: clamp(2%, 3%, 4%);
+    padding: 2% 0;
+    background-color: rgb(236, 233, 233);
+    border-top: 3px solid rgb(209, 202, 202);
+}
+
+.fa-location-dot {
+    font-size: clamp(1em, 2vw, 2em);
+    margin-right: 20px;
+}
+
+/* css section-1 */
+.section1 {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding: 20px 50px;
+}
+
+.section1 h2 {
+    font-size: clamp(1em, 4vw, 5em);
+    text-align: center;
+}
+
+.section1 p {
+    font-size: clamp(.9em, 2vw, 5em);
+    margin-top: 10px ;
+    margin-bottom:10px;
+    color: gray;
+}
+
+button{
+    margin-top: 10px;
+    text-decoration: none;
+    border: none;
+    background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+    padding: 15px 25px;
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 1px 1px 2px 2px #e2e2e2;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+button:hover{
+    transform: scale(1.2);
+    opacity: .8;
+}
+
+/* css section2 fonctionnement */
+.section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    row-gap: 20px;
+    padding: 20px 30px;
+}
+
+h2 {
+    text-align: left;
+    width: 100%;
+}
+
+/* les div de la section2 "fonctionnement" */
+#section2 {
+    list-style: none;
+    counter-reset: line;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.fa-mobile-screen-button,
+.fa-list,
+.fa-store {
+    color: gray;
+    float: left;
+    margin-left: 50px;
+    font-size: clamp(10px, 4vw, 20px);
+}
+
+.fa-mobile-screen-button:hover,
+.fa-list:hover,
+.fa-store:hover{
+    color: #9356DC;
+}
+
+#section2 li {
+    position: relative;
+    margin-bottom: 2em;
+    height: 2%;
+    background-color: rgb(241, 240, 240);
+    padding: 20px 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: clamp(10px, 4vw, 20px);
+    font-weight: bold;
+    box-shadow: 2px 3px 3px 3px #e2e2e2;
+    font-family: 'Roboto';
+    width: 100%;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+#section2 li:hover{
+    transform: scale(1.1);
+}
+
+#section2 li::before {
+    position: absolute;
+    left: -.5em;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #9356DC;
+    border-radius: 100px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.5em;
+    counter-increment: line;
+    content: counter(line);
+    font-size: clamp(10px, 15px, 40px);
+}
+
+
+/* css section3 restaurants*/
+.section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    padding: 20px 30px;
+    background-color: #f2f2f2;
+}
+
+/* css des restaurants */
+#section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+#lapalettedugout,
+#lanoteenchantée,
+#alafrancaise,
+#delicedessens {
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #e2e2e2;
+    border-radius: 10px;
+    width: 100%;
+    height: 225px;
+    position: relative;
+    transition: all 1s linear;
+}
+
+#lapalettedugout:active,
+#lanoteenchantée:active,
+#alafrancaise:active,
+#delicedessens:active{
+    transform: scale(1.1);
+}
+
+#lapalettedugout img,
+#alafrancaise img,
+#delicedessens img {
+    width: 100%;
+    height: 75%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    object-position: 30% 100%;
+    margin-bottom: 5px;
+}
+
+#lanoteenchantée img {
+    width: 100%;
+    height: 75%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    object-position: 10% 61%;
+    margin-bottom: 5px;
+}
+
+/* css h4 et coeur favorite */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.favorite{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 15px;
+    position: relative;
+}
+
+.favorite h4 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.favorite i{
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    left: 85%;
+}
+
+.favorite .fa-solid{
+    background-image: linear-gradient(90deg, #ff79da, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 1s linear;
+    opacity:0;
+}
+
+.favorite .fa-solid:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.p2 {
+    text-align: left;
+    font-size: 15px;
+    margin: 5px 15px 0 15px;
+}
+
+.nouveau {
+    position: absolute;
+    font-size: 15px;
+    top: 15%;
+    left: 85%;
+    transform: translate(-60%, -50%);
+    color: green;
+    border-radius: 2px;
+    background-color: rgb(91, 248, 248);
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+/* css footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    width: 100%;
+    background-color: #333;
+    row-gap: 10px;
+    color: #fff;
+    padding: 20px 0 20px 50px;
+}
+
+h1 {
+    font-family: 'Shrikhand', cursive;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+footer i {
+    margin-right: 5px;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (min-width:501px) {
+
+    #lapalettedugout,
+    #lanoteenchantée,
+    #alafrancaise,
+    #delicedessens {
+        height: 300px;
+    }
+
+    #lapalettedugout img,
+    #alafrancaise img,
+    #delicedessens img,
+    #lanoteenchantée img {
+        height: 80%;
+    }
+}
+
+@media only screen and (min-width:719px){
+    /* les cases des restaurants */
+
+    #section3 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #lapalettedugout,
+    #lanoteenchantée,
+    #alafrancaise,
+    #delicedessens{
+        width: 48%;
+    }
+
+    /*  les cases du fonctionnement */
+
+    #section2{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #section2 li{
+        width: 45%;
+        font-size: 18px;
+    }
+
+}
+
